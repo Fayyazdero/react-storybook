@@ -4,12 +4,7 @@ import PropTypes from 'prop-types';
 import './card.css';
 
 export const Card = ({ title, content, backgroundColor, border }) => {
-  const cardStyle = {};
-  if (backgroundColor || border) {
-    cardStyle.backgroundColor = backgroundColor;
-    cardStyle.border = border;
-  }
-  console.log({cardStyle})
+  const cardStyle = {backgroundColor, border};
 
   return (
     <div className="storybook-card" style={cardStyle}>
@@ -24,9 +19,11 @@ Card.propTypes = {
   content: PropTypes.string.isRequired,
   backgroundColor: PropTypes.string,
   border: PropTypes.string,
+  onClick: PropTypes.func
 };
 
 Card.defaultProps = {
   backgroundColor: '#ffffff',
-  border: '',
+  border: null,
+  onClick: undefined
 };
