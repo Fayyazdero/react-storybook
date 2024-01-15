@@ -16,6 +16,9 @@ export default {
   parameters: {
     layout: 'centered',
   },
+  tags: ['autodocs'],
+
+ 
 };
 
 const Template = (args) => <Button {...args} />;
