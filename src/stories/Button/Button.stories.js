@@ -17,12 +17,16 @@ export default {
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs'],
-
- 
+  tags: ['autodocs'], 
 };
 
 const Template = (args) => <Button {...args} />;
+
+export const Default = Template.bind({});
+Default.args = {
+  children: 'Default Button',
+  variant: 'contained'
+}
 
 export const Contained = Template.bind({});
 Contained.args = {
