@@ -1,7 +1,7 @@
 import { Header } from './Header';
 
 export default {
-  title: 'Example/Header',
+  title: 'Components/Header',
   component: Header,
   tags: ['autodocs'],
   parameters: {
@@ -12,7 +12,7 @@ export default {
 export const LoggedIn = {
   args: {
     user: {
-      name: 'Jane Doe',
+      name: 'Qasim',
     },
   },
 };

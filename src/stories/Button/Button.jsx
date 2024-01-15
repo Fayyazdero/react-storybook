@@ -1,32 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './button.css';
+import { StyledButton } from './styles';
+import { FaIcons } from 'react-icons/fa';
 
-export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+const Button = ({ variant, size, disabled, bgClr, children, iconLeft, iconRight }) => {
+  
   return (
-    <button
-      type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={backgroundColor && { backgroundColor }}
-      {...props}
-    >
-      {label}
-    </button>
+    <StyledButton variant={variant} bgClr={bgClr} size={size} disabled={disabled}>
+      {iconLeft && <span className="icon-left"><FaIcons name="left-icon" /></span>}
+      {children}
+      {iconRight && <span className="icon-right"><FaIcons name="right-icon" /></span>}
+    </StyledButton>
   );
 };
 
 Button.propTypes = {
-  primary: PropTypes.bool,
-  backgroundColor: PropTypes.string,
+  variant: PropTypes.oneOf(['contained', 'outlined', 'text']),
   size: PropTypes.oneOf(['small', 'medium', 'large']),
-  label: PropTypes.string.isRequired,
-  onClick: PropTypes.func,
+  disabled: PropTypes.bool,
+  children: PropTypes.node,
+  bgClr: PropTypes.oneOf(['primary', 'secondary', 'danger', 'warning']),
+  iconLeft: PropTypes.node,
+  iconRight: PropTypes.node,
 };
 
 Button.defaultProps = {
-  backgroundColor: null,
-  primary: false,
+  variant: 'contained',
   size: 'medium',
-  onClick: undefined,
+  disabled: false,
+  bgClr: 'primary',
 };
+
+export default Button;

@@ -1,49 +1,52 @@
-import { Button } from './Button';
+import React from 'react';
+import Button from './Button';
+import { FaIcon } from 'react-icons/fa'; // Example icon import
 
 export default {
-  title: 'Example/Button',
+  title: 'Components/Button',
   component: Button,
+  argTypes: {
+    children: { control: 'text' },
+    variant: { control: { type: 'select', options: ['contained', 'outlined', 'noBorder'] } },
+    size: { control: { type: 'select', options: ['small', 'medium', 'large'] } },
+    disabled: { control: 'boolean' },
+    iconLeft: { control: 'boolean' },
+    iconRight: { control: 'boolean' },
+  },
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs'],
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
 };
 
-export const Primary = {
-  args: {
-    primary: true,
-    label: 'Button',
-  },
+const Template = (args) => <Button {...args} />;
+
+export const Contained = Template.bind({});
+Contained.args = {
+  children: 'Contained Button',
+  variant: 'contained',
 };
 
-export const Secondary = {
-  args: {
-    label: 'Button',
-  },
+export const Outlined = Template.bind({});
+Outlined.args = {
+  children: 'Outlined Button',
+  variant: 'outlined',
 };
 
-export const Large = {
-  args: {
-    size: 'large',
-    label: 'Button',
-  },
+export const Text = Template.bind({});
+Text.args = {
+  children: 'Only Text',
+  variant: 'text',
+  bgClr: '#ffffff'
 };
 
-export const Small = {
-  args: {
-    size: 'small',
-    label: 'Button',
-  },
+export const WithLeftIcon = Template.bind({});
+WithLeftIcon.args = {
+  children: 'Button with Left Icon',
+  iconLeft: true,
 };
 
-
-export const Warning = {
-  args: {
-    primary: true,
-    label: 'Delete now',
-    backgroundColor: 'red',
-  }
+export const WithRightIcon = Template.bind({});
+WithRightIcon.args = {
+  children: 'Button with Right Icon',
+  iconRight: true,
 };
