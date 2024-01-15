@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from './Button';
 import { FaIcon } from 'react-icons/fa'; // Example icon import
+import COLORS from '../constants/colors';
 
 export default {
   title: 'Components/Button',
@@ -33,13 +34,14 @@ export const Outlined = Template.bind({});
 Outlined.args = {
   children: 'Outlined Button',
   variant: 'outlined',
+  bgClr: COLORS.default
 };
 
 export const Text = Template.bind({});
 Text.args = {
   children: 'Only Text',
   variant: 'text',
-  bgClr: '#ffffff'
+  bgClr: COLORS.default
 };
 
 export const WithLeftIcon = Template.bind({});
