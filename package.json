@@ -20,7 +20,9 @@
     "eject": "react-scripts eject",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "npx chromatic --project-token=chpt_2583e30537d41b2"
+    "chromatic": "npx chromatic --project-token=chpt_2583e30537d41b2",
+    "chromatic-auto-accept": "chromatic --project-token=chpt_2583e30537d41b2 --auto-accept-changes"
+
   },
   "eslintConfig": {
     "extends": [

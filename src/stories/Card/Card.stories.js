@@ -28,10 +28,11 @@ export const ColoredBackground = {
   },
 };
 
-export const Bordered = {
+export const Outlined = {
   args: {
     title: 'Colored Card',
     content: 'This card has a background.',
-    border: '1px solid red',
+    backgroundColor: "#ffffff",
+    border: '1px solid #3b3b3b',
   },
 };
